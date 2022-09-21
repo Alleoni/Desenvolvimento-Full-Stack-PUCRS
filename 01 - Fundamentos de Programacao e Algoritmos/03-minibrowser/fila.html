@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log('[Fila/Queue]');
+
+        var fila = [
+            'script.js',
+            'style.css',
+            'imagem.png',
+        ];
+
+        // Adiciona alguem na fila
+        fila.push('doguinho.jpg')
+
+        // Remove o primeiro da fila
+        fila.shift();
+
+        class Queue {   //Receita para criar objetos.
+            constructor(){
+                this.data = [];
+            }
+
+
+            print(){
+                console.log(this.data)
+            }
+
+            enqueue(item) {
+                this.data.push(item)
+            }
+            dequeue() {
+                this.data.shift();
+            }
+
+        }
+
+        //Design do Código First
+        var requests = new Queue();
+
+        //Open Closed
+        //Open: Aberto pra extensão
+        //Closed: Fechado para modificação
+        
+        requests.enqueue('script.js');
+        requests.print();
+        requests.dequeue('script.js');
+        requests.enqueue('style.css');
+        requests.enqueue('imagem.png');
+        requests.enqueue('doguinho.jpg');
+        requests.print();
+    </script>
+
+
+</body>
+
+</html>

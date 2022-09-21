@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //LIFO Last In first Out - STACk
+        console.log('Pilha/Stack');
+        class BrowserHistoryStack {
+            constructor(){
+                this.cursor = 0;
+                this.data = [];
+            }
+
+            push(item){
+                this.cursor = this.cursor + 1;
+                this.data.push(item);
+            }
+            back(){ //pop
+                this.cursor = this.cursor - 1;
+                //this.data.pop();
+            }
+            print(){
+                console.log('Cursor', this.cursor);
+                console.log('itens atuais',this.data);
+            }
+            clear(){
+                this.data = [];
+            }
+        }
+        const history = new BrowserHistoryStack();
+        history.push('https://google.com');
+        history.push('https://youtube.com');
+        history.push('https://facebook.com');
+        history.print();
+        history.back();
+        history.print();
+    </script>
+
+
+</body>
+</html>

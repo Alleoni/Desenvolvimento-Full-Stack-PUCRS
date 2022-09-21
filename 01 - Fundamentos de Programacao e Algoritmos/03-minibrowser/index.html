@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Browser Experimental</title>
+</head>
+
+<body>
+    <script>
+        // Objetos: Representa coisas com multiplos atributos para representá-los
+        var aba1 = {
+            titulo: 'Titulo da aba 1',
+            url: 'https://blog.betrybe.com/tecnologia/comandos-windows/'
+        };
+        var aba2 = {
+            titulo: 'Titulo da aba2',
+            url: 'file:///C:/Users/guilh/OneDrive/%C3%81rea%20de%20Trabalho/codigo-da-aula/03-minibrowser/index.html'
+        };
+
+        //Arrays: Lista de coisas
+        const abas = [
+            aba1,
+            aba2
+            
+        ];
+
+        for (aba of abas) {
+            console.log(aba.titulo);
+            var valorAtual = document.body.innerHTML;
+            document.body.innerHTML = valorAtual + `<li> <a href=${aba.url}> ${aba.titulo} </a></li>`;
+            }
+
+    </script>
+
+    <link rel="stylesheet" href="./style.css" />
+
+</body>
+
+</html>
