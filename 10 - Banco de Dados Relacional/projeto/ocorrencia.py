@@ -8,7 +8,7 @@ base = orm.declarative_base()
 # Tabela cliente
 
 
-class tbDP(base):
+class DP(base):
     __tablename__ = "tbDP"
 
     codDP = sa.Column(sa.INTEGER, primary_key=True, index=True)
@@ -16,14 +16,14 @@ class tbDP(base):
     endereco = sa.Column(sa.VARCHAR(255))
 
 
-class tbResponsavelSP(base):
-    __tablename__ = "tbResponsavelSP"
+class ResponsavelDP(base):
+    __tablename__ = "tbResponsavelDP"
 
     codDP = sa.Column(sa.INTEGER, primary_key=True, index=True)
     delegado = sa.Column(sa.VARCHAR(100), nullable=False)
 
 
-class tbMunicipio(base):
+class Municipio(base):
     __tablename__ = "tbMunicipio"
 
     codIBGE = sa.Column(sa.INTEGER, primary_key=True, index=True)
@@ -35,7 +35,7 @@ class tbMunicipio(base):
     #    "fornecedor.registro_fornecedor", ondelete="NO ACTION", onupdate="CASCADE"), index=True)
 
 
-class tbOcorrencias(base):
+class Ocorrencias(base):
     __tablename__ = "tbOcorrencias"
 
     idRegistro = sa.Column(sa.INTEGER, primary_key=True, index=True)
